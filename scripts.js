@@ -43,19 +43,33 @@ function reservarArmario() {
   let armarioSorteado =
     armariosDisponiveis[Math.floor(Math.random() * armariosDisponiveis.length)];
 
+  // Pegando o horário em que a reserva foi feita e acrescentando 24 horas.
+  let dataReserva = new Date();
+  let dataReservaFormatada = dataReserva.toLocaleString("pt-BR", {
+    dateStyle: "short",
+    timeStyle: "short",
+  });
+  let dataExpiracao = new Date(
+    dataReserva.getTime() + 24 * 60 * 60 * 1000
+  ).toLocaleString();
+  console.log(`Reserva feita em: ${dataReserva}`);
+  console.log(`Reserva expira em: ${dataExpiracao}`);
+
   // Depois localizamos o armário emprestado na lista de armarios e mudamos o status do armário.
-  let armarioEmprestado = (armarios.find(
+  let armarioEmprestado = armarios.find(
     (armario) => armario.id === armarioSorteado.id
-  ).status = false);
+  );
+
+  armarioEmprestado.status = false;
+
+  // Adicionamos as informações de reserva ao armário emprestado.
+  armarioEmprestado.dataReserva = dataReservaFormatada;
+  armarioEmprestado.dataExpiracao = dataExpiracao;
+
+  console.log(armarioEmprestado);
 
   // Finalmente, mudamos a pendencia do usuário para verdadeira.
   usuario.pendencia = true;
-
-  // Pegando o horário em que a reserva foi feita e acrescentando 24 horas.
-  let dataReserva = new Date();
-  let dataExpiracao = new Date(dataReserva.getTime() + 24 * 60 * 60 * 1000).toLocaleString();
-  console.log(`Reserva feita em: ${dataReserva}`);
-  console.log(`Reserva expira em: ${dataExpiracao}`);
 
   // Impmimimos uma mensagem de reserva para o usuário.
   document.getElementById(
