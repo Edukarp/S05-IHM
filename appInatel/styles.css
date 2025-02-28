@@ -57,7 +57,6 @@
 }
 
 .news{
-  border: solid;
   margin-top: 32px;
   margin-left: 16px;
   margin-right: 16px;
@@ -66,6 +65,7 @@
 }
 
 .news-content{
+  border: solid;
   padding-left: 8px;
 }
 
@@ -74,8 +74,6 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background-color: #f1f1f1a1;
-  position: relative;
   bottom: 0;
   width: 100%;
 }
@@ -84,7 +82,7 @@
   height: 15px;
   width: 15px;
   margin: 0 5px;
-  background-color: #bbb;
+  background-color: #e2d6d6;
   border-radius: 50%;
   display: inline-block;
 }
