@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>App Inatel</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js" defer></script>
     <script
       src="https://kit.fontawesome.com/b47d1034e7.js"
       crossorigin="anonymous"
@@ -13,21 +14,27 @@
   <body>
     <header class="top-bar">
         <div class="left-icons">
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <i class="fa-solid fa-bars fa-xl" style="color: #ffffff;" onclick="toggleCard()"></i>
         </div>
       <div class="logo">
           <img
-            src="./public/Inatel.png"
+            src="./public/Inatel_Branco.svg"
             alt="Logo do site"
             width="25%"
             height="100%"
           />
         </div>
         <div class="right-icons">
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <i class="fa-solid fa-circle-user fa-xl" style="color: #ffffff;"></i>
         </div>
       </div>
     </header>
+
+    <div id="theme-card" class="theme-card">
+        <h3>Escolha o Tema</h3>
+        <button onclick="setTheme('classic-theme')">Tema Classico</button>
+        <button onclick="setTheme('pink-theme')">Tema Pink-lemonade</button>
+      </div>
 
     <main>
       <div class="profile">
@@ -36,14 +43,14 @@
           <div class="icon-text">
             <i
               class="fa-solid fa-circle-exclamation fa-fade"
-              style="color: #e3164a; margin-right: 8px"
+              style="color: #FFFFFF; margin-right: 8px"
             ></i>
             <p>Você possui um armario reservado com entrega para hoje.</p>
           </div>
           <div class="icon-text">
             <i
               class="fa-solid fa-circle-exclamation fa-fade"
-              style="color: #e3164a; margin-right: 8px"
+              style="color: #FFFFFF; margin-right: 8px"
             ></i>
             <p>Você possui pendencias com o financeiro.</p>
           </div>
