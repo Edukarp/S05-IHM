@@ -31,6 +31,38 @@ body {
   font-style: normal;
 }
 
+.theme-card {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  padding: 0px 12px 16px 8px;
+  background-color: var(--md-sys-color-secondary);
+  color: var(--md-sys-color-on-primary);
+  border: 1px solid var(--md-sys-color-on-secondary);
+  border-radius: 5px;
+  font-style: bold;
+  opacity: 1;
+  z-index: 10;
+}
+
+.theme-card button {
+  display: block;
+  margin: 5px 0;
+  padding: 5px;
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-secondary);
+  border: 1px solid var(--md-sys-color-on-secondary);
+  border-radius: 3px;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.theme-card button:hover {
+  background-color: var(--md-sys-color-on-secondary);
+  color: var(--md-sys-color-secondary);
+}
+
 .top-bar {
   display: flex;
   justify-content: space-between;
@@ -121,34 +153,87 @@ body {
   display: inline-block;
 }
 
-.theme-card {
-  display: none;
-  position: absolute;
-  top: 50px;
-  left: 0;
-  padding: 0px 12px 16px 8px;
-  background-color: var(--md-sys-color-secondary);
-  color: var(--md-sys-color-on-primary);
-  border: 1px solid var(--md-sys-color-on-secondary);
-  border-radius: 5px;
-  font-style: bold;
-  opacity: 1;
-  z-index: 10;
-}
-
-.theme-card button {
-  display: block;
-  margin: 5px 0;
-  padding: 5px;
-  background-color: var(--md-sys-color-primary);
+.card h3 {
+  font-family: "Arimo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
   color: var(--md-sys-color-on-secondary);
-  border: 1px solid var(--md-sys-color-on-secondary);
-  border-radius: 3px;
-  cursor: pointer;
-  opacity: 1;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-.theme-card button:hover {
-  background-color: var(--md-sys-color-on-secondary);
-  color: var(--md-sys-color-secondary);
+.card p {
+  font-family: "Arimo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 11px;
+  color: var(--md-sys-color-on-secondary);
+  line-height: 1.5;
+  orphans: 3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 10px;
+  margin: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel {
+  display: relative;
+}
+
+.card {
+  min-width: 100%;
+  text-align: center;
+  background-color: var(--md-sys-color-secondary);
+  border: solid;
+  border-radius: 5%;
+  border-bottom: none;
+  border-color: var(--md-sys-color-on-secondary);
+}
+
+.card img {
+  width: 100%;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.info {
+  padding: 10px;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 5px;
+  margin-right: 2px;
+  font-size: 15px;
+  
+}
+
+.card button {
+  position: absolute;
+  top: 30%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+#prevBtn {
+  left: 10px;
+}
+#nextBtn {
+  right: 10px;
 }
