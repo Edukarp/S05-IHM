@@ -75,9 +75,9 @@ function setTheme(theme) {
   toggleCard();
 }
 
-function populateCarousel(events) {
-  const carousel = document.querySelector(".carousel");
+const carousel = document.querySelector(".carousel");
 
+function populateCarousel(events) {
   events.forEach((event) => {
     const card = document.createElement("div");
     card.classList.add("card");
@@ -100,31 +100,51 @@ function populateCarousel(events) {
   });
 }
 
-populateCarousel(eventos);
-
-let currentIndex = 0;
-const carousel = document.querySelector(".carousel");
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
-
-/*
-function updateCarousel() {
-  const cardWidth = document.querySelector(".card").offsetWidth + 16; 
-  carousel.style.transform = `translateX(${-currentIndex * cardWidth}px)`;
+let index = 0;
+function nextCard() {
+  index = (index + 1) % eventos.length;
+  updateCarousel();
 }
 
-nextBtn.addEventListener("click", () => {
-  if (currentIndex < events.length - 1) {
-    currentIndex++;
-    updateCarousel();
-  }
+function prevCard() {
+  index = (index - 1 + eventos.length) % eventos.length;
+  updateCarousel();
+}
+
+function updateCarousel() {
+  carousel.style.transform = `translateX(-${index * 100}%)`;
+}
+
+document.getElementById("nextBtn").addEventListener("click", nextCard);
+document.getElementById("prevBtn").addEventListener("click", prevCard);
+
+let startX;
+carousel.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+});
+carousel.addEventListener("touchend", (e) => {
+  let endX = e.changedTouches[0].clientX;
+  if (startX - endX > 50) nextCard();
+  if (endX - startX > 50) prevCard();
 });
 
-prevBtn.addEventListener("click", () => {
-  if (currentIndex > 0) {
-    currentIndex--;
-    updateCarousel();
-  }
+let autoSlideInterval;
 
-});
-*/
+function startAutoSlide() {
+  autoSlideInterval = setInterval(() => {
+    nextCard();
+  }, 5000);
+  carousel.classList.remove("paused");
+}
+
+function stopAutoSlide() {
+  clearInterval(autoSlideInterval);
+  carousel.classList.add("paused");
+}
+
+carousel.addEventListener("mouseenter", stopAutoSlide);
+carousel.addEventListener("mouseleave", startAutoSlide);
+
+startAutoSlide();
+
+populateCarousel(eventos);
