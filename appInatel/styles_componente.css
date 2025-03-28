@@ -1,0 +1,68 @@
+.comp-aula {
+  --frequencia: #6a6fc9;
+  --prova: #ff4d00;
+  --nota: #00bfff;
+  border:solid;
+  margin-bottom: 12px;
+  margin-left: 16px;
+}
+
+.lable-nota.vermelho {
+  background-color: #ff4d4d;
+}
+
+.lable-nota.laranja {
+  background-color: #ffa500;
+}
+
+.lable-nota.verde {
+  background-color: #4caf50;
+}
+
+.titulo_aula {
+  font-weight: bold;
+  font-size: 15px;
+  padding: 0 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 8px;
+  margin-top: 8px;
+}
+
+.local{
+    margin-left: 8px;
+}
+
+.lables {
+  display: flex;
+}
+
+.lable-prova,
+.lable-frequencia,
+.lable-nota {
+  background-color: var(--prova);
+  padding: 7px 15px;
+  margin-bottom: 10px;
+  margin-top: 8px;
+  margin-left: 8px;
+  border-radius: 500px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.lable-frequencia {
+  background-color: var(--frequencia);
+}
+
+.lable-nota {
+  background-color: var(--nota);
+}
+
+.p_lable {
+  font-size: 13px;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
