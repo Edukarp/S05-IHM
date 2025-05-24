@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap");
+
+/*Temas*/
+:root {
+  --md-sys-color-primary: #065cbe;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-secondary: #2f4f9d;
+  --md-sys-color-on-secondary: #ffffff;
+  --alert: #bc3030;
+}
+
+.pink-theme {
+  --md-sys-color-primary: #db58d9;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-secondary: #d537a6;
+  --md-sys-color-on-secondary: #ffffff;
+  --alert: #6827c4;
+}
+
+.classic-theme {
+  --md-sys-color-primary: #065cbe;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-secondary: #2f4f9d;
+  --md-sys-color-on-secondary: #ffffff;
+  --alert: #bc3030;
+}
+
+html,
+body {
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  font-family: "Arimo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.logo {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.left-icons,
+.right-icons {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.profile {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.up-text {
+  margin-bottom: -20px;
+}
+.icon-text {
+  display: flex;
+  align-items: center;
+  padding-bottom: 12px;
+}
+
+.event-container h1 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.event-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.event-card h2,
+p {
+  padding-left: 12px;
+}
+
+.event-card button {
+  display: block;
+  justify-self: anchor-center;
+  background-color: var(--md-sys-color-secondary);
+  color: var(--md-sys-color-on-secondary);
+  border: solid;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 16px 12px 0 12px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+event-card button:hover {
+  background-color: var(--md-sys-color-on-secondary);
+  color: var(--md-sys-color-secondary);
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.12);
+}
+
+.event-card {
+  border: solid;
+  border-bottom: var(--md-sys-color-on-primary);
+  padding-bottom: 20px;
+  margin: auto;
+}
+
+.badge-ac {
+  display: inline-block;
+  background: var(--alert);
+  color: #fff;
+  font-size: 0.8em;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-left: 8px;
+  vertical-align: middle;
+  font-weight: 600;
+}
