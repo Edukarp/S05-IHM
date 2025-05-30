@@ -57,22 +57,24 @@ const eventos = [
   },
 ];
 
-function toggleCard() {
-  const card = document.getElementById("theme-card");
-  if (card.style.display === "none" || card.style.display === "") {
-    card.style.display = "block";
-  } else {
-    card.style.display = "none";
-  }
+function goToEvents() {
+  window.location.href = "eventos/index.html";
+}
+
+function toggleSidebar() {
+  const sidebar = document.getElementById("sidebar");
+  sidebar.classList.toggle("open");
+}
+
+function toggleThemes() {
+  const themes = document.getElementById("themes-options");
+  themes.classList.toggle("show");
 }
 
 function setTheme(theme) {
-  const html = document.documentElement;
-  html.classList.remove("classic-theme", "pink-theme");
-  html.classList.add(theme);
-
+  document.documentElement.classList.remove("classic-theme", "pink-theme");
+  document.documentElement.classList.add(theme);
   localStorage.setItem("selectedTheme", theme);
-  toggleCard();
 }
 
 const carousel = document.querySelector(".carousel");
